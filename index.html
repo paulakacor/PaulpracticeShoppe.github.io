@@ -8,7 +8,9 @@
     <link rel="icon" href="./assets/img/Icon-Shopee.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/bass.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.1-web/css/all.min.css">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -16,8 +18,8 @@
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
                             Vào cửa hàng ứng dụng trên F8
@@ -130,7 +132,11 @@
                 </nav>
 
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
+                    <div class="header__logo hide-on-tablet">
                         <a href="/" class="header__logo-link">
                             <svg class="header__logo-img" viewBox="0 0 192 65">
                                 <g fill-rule="evenodd">
@@ -141,7 +147,8 @@
                     </div>
                     
                     <!-- Header search-->
-                    <div class="header__search">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="mobile__search-checkbox">
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm">
                             <div class="header__search-history">
@@ -389,12 +396,30 @@
                     </div>
                 </div>
             </div>
+
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+            
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+         
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
+    
         </header>
         <div class="app__container">
             <!-- grid -> row -> column -->
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2 ">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0 ">
     
                         <nav class="category">
                             <h3 class="category__heading">
@@ -416,8 +441,8 @@
     
                     </div>
     
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp xếp theo</span>
                             <button class="btn home-filter__btn">Phổ biến</button>
                             <button class="btn home-filter__btn btn--primary">Mới nhất</button>
@@ -449,11 +474,48 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Mấy đứa này rất hư Mấy đứa này rất hư Mấy đứa này rất hư Mấy đứa này rất hư</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Mấy đứa này rất ngoan</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Các em đã cố gắng rồi</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Cố gắng đỗ đại học nha</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Tất cả đều phải đỗ nv1 đấy</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Phải đạt được mục tiêu</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Tầm này cần các cụ phù hộ nữa thôi</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Quyết chiến</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Mấy đứa này rất hư</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Tất cả đều phải đỗ nv1 đấy</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Phải đạt được mục tiêu</a>
+                                </li><li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Tầm này cần các cụ phù hộ nữa thôi</a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Quyết chiến</a>
+                            </ul>
+                        </nav>
+
                         <div class="home-product">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://scontent.fhan6-1.fna.fbcdn.net/v/t39.30808-6/285744082_3052446231687729_7437247110805441842_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=YiBbqxtr4sgAX9tnaRF&_nc_oc=AQl0vOKe1ONZ5f73_0WNqnYaog9iP_dMifqC-0H72afDBQqG8-Jrqa-zulyGYoJTbSE&_nc_ht=scontent.fhan6-1.fna&oh=00_AT8KhyUFnBGwN7mfkovmxXSdJV7ZnUepRdsz4bTnEqpI-Q&oe=62B95680);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(./assets/img/14.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">1.200.000</span>
@@ -489,9 +551,9 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://scontent.fhan2-2.fna.fbcdn.net/v/t39.30808-6/279149712_1169225583842537_3489914828296941005_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=TRTg_aZlGpkAX-f3NQ4&_nc_ht=scontent.fhan2-2.fna&oh=00_AT_7Q_C2_-sLgCp3C3naV8pGT8vIF3aXk_7fs9b4_mUoOg&oe=62BDB39B);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(./assets/img/15.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">1.200.000</span>
@@ -527,7 +589,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(https://scontent.fhan6-1.fna.fbcdn.net/v/t1.6435-9/159948289_912566449508453_5548877098269291008_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=174925&_nc_ohc=I3_8H4LWSeYAX_We9aX&_nc_ht=scontent.fhan6-1.fna&oh=00_AT9yeY-RPiZeGsAcQgXjox8KYbjVV7xNm9KXmC7EfG-DlA&oe=62D6B541);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
@@ -565,9 +627,9 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://scontent.fhan6-1.fna.fbcdn.net/v/t39.30808-6/272092822_3057496094504133_4976432645564389942_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=lBEVP75Y2XQAX941Z7Q&tn=l_5Qgu3XxXwrdVeD&_nc_ht=scontent.fhan6-1.fna&oh=00_AT_x8Hr6hWuQ4jSlytEjd1vWKH32iw6eGbcHRxhRQBcrHQ&oe=62B6BA16);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(./assets/img/16.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">1.200.000</span>
@@ -603,9 +665,9 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(https://scontent.fhan6-1.fna.fbcdn.net/v/t39.30808-6/239732765_2965894670330943_9086905379105006838_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=174925&_nc_ohc=AaVoIcDsR-oAX8_LE2w&_nc_ht=scontent.fhan6-1.fna&oh=00_AT-QWjgTKxFcT1O_qpB4AV4vTv_rUUrGLzhBusKf64qkSA&oe=62B71545);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(./assets/img/17.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">1.200.000</span>
@@ -641,7 +703,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/4.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
@@ -679,9 +741,9 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
-                                        <div class="home-product-item__img" style="background-image: url(./assets/img/5.jpg);"></div>
+                                        <div class="home-product-item__img" style="background-image: url(./assets/img/13.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
                                         <div class="home-product-item__price">
                                             <span class="home-product-item__price-old">1.200.000</span>
@@ -717,7 +779,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/6.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
@@ -755,7 +817,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/7.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
@@ -793,7 +855,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a class="home-product-item" href="">
                                         <div class="home-product-item__img" style="background-image: url(./assets/img/10.jpg);"></div>
                                         <h4 class="home-product-item__name">Set dưỡng trắng Whoo  đông y hoàng cung  Gong Jinh Yang Seol Radiant</h4>
@@ -875,9 +937,9 @@
             
         </div>
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -891,7 +953,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Giới thiệu</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -905,7 +967,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Danh mục</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -919,7 +981,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Theo dõi</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -942,7 +1004,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/qrshopee.png" alt="Download QR" class="footer__download-qr">
@@ -959,7 +1021,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <div class="grid">
+                <div class="grid wide">
                     <p class="footer__text">© 2022 - Bản quyền thuộc về Công ty Huy Trẻ Trâu</p>
                 </div>
             </div>
